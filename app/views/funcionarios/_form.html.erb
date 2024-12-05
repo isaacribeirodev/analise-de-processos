@@ -1,0 +1,46 @@
+<%= form_with(model: funcionario, display: "inline") do |form| %>
+  <% if funcionario.errors.any? %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading"><%= pluralize(funcionario.errors.count, "erro") %> impediu(ram) que este funcionário fosse salvo:</h4>
+      <ul class="mb-0">
+        <% funcionario.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :nome, "Nome Completo", class: "form-label" %>
+    <%= form.text_field :nome, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :cpf, "CPF", class: "form-label" %>
+    <%= form.text_field :cpf, class: "form-control", placeholder: "000.000.000-00", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :cargo, "Cargo", class: "form-label" %>
+    <%= form.text_field :cargo, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :senha, "Senha", class: "form-label" %>
+    <%= form.password_field :senha, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit @funcionario.new_record? ? "Cadastrar" : "Atualizar", class: "btn btn-primary mb-2" %>
+    <% if funcionario.new_record? %>      
+      <div class="float-md-end">  
+        <%= link_to "Voltar para Funcionários", funcionarios_path, class: "btn btn-secondary" %>
+      </div>
+    <% else %>
+      <div class="float-md-end">
+        <%= link_to "Voltar para Cadastro", @funcionario, class: "btn btn-secondary" %>
+        <%= link_to "Voltar para Funcionários", funcionarios_path, class: "btn btn-secondary ms-2" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,327 @@
+<%= form_with(model: analise) do |form| %>
+  <% if analise.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(analise.errors.count, "error") %> impediu que esta análise fosse salva:</h2>
+
+      <ul>
+        <% analise.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label "Diploma Não Emitido", style: "display: block" %>
+    <%= form.checkbox :diploma_nao_emitido_check %>
+  </div>
+
+  <div>
+    <%= form.label "Status da Matrícula é 'Concluído' ou 'Formado'", style: "display: block" %>
+    <%= form.checkbox :status_matricula_check %>
+  </div>
+
+  <div>
+    <%= form.label "Nome", style: "display: block" %>
+    <%= form.checkbox :nome_check %>
+  </div>
+
+  <div>
+    <%= form.label "Nome Correto", style: "display: block" %>
+    <%= form.text_field :nome_correto %>
+  </div>
+
+  <div>
+    <%= form.label "CPF", style: "display: block" %>
+    <%= form.checkbox :cpf_check %>
+  </div>
+
+  <div>
+    <%= form.label "CPF Correto", style: "display: block" %>
+    <%= form.text_field :cpf_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Data de Nascimento", style: "display: block" %>
+    <%= form.checkbox :data_nascimento_check %>
+  </div>
+
+  <div>
+    <%= form.label "Data de Nascimento Correta", style: "display: block" %>
+    <%= form.date_field :data_nascimento_correta %>
+  </div>
+
+  <div>
+    <%= form.label "Naturalidade", style: "display: block" %>
+    <%= form.checkbox :naturalidade_check %>
+  </div>
+
+  <div>
+    <%= form.label "Naturalidade Correta", style: "display: block" %>
+    <%= form.text_field :naturalidade_correta %>
+  </div>
+
+  <div>
+    <%= form.label "Nome do Pai", style: "display: block" %>
+    <%= form.checkbox :nome_pai_check %>
+  </div>
+
+  <div>
+    <%= form.label "Nome do Pai Correto", style: "display: block" %>
+    <%= form.text_field :nome_pai_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Nome da Mãe", style: "display: block" %>
+    <%= form.checkbox :nome_mae_check %>
+  </div>
+
+  <div>
+    <%= form.label "Nome da Mãe Correto", style: "display: block" %>
+    <%= form.text_field :nome_mae_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Identidade", style: "display: block" %>
+    <%= form.checkbox :identidade_check %>
+  </div>
+
+  <div>
+    <%= form.label "Identidade Correta", style: "display: block" %>
+    <%= form.text_field :identidade_correta %>
+  </div>
+
+  <div>
+    <%= form.label "Órgão Expedidor", style: "display: block" %>
+    <%= form.checkbox :orgao_expedidor_check %>
+  </div>
+
+  <div>
+    <%= form.label "Órgão Expedidor Correto", style: "display: block" %>
+    <%= form.text_field :orgao_expedidor_correto %>
+  </div>
+
+  <div>
+    <%= form.label "UF Correta", style: "display: block" %>
+    <%= form.checkbox :uf_check %>
+  </div>
+
+  <div>
+    <%= form.label "UF Correta", style: "display: block" %>
+    <%= form.text_field :uf_correta %>
+  </div>
+
+  <div>
+    <%= form.label "Data de Expedição", style: "display: block" %>
+    <%= form.checkbox :data_expedicao_check %>
+  </div>
+
+  <div>
+    <%= form.label "Data de Expedição Correta", style: "display: block" %>
+    <%= form.date_field :data_expedicao_correta %>
+  </div>
+
+  <div>
+    <%= form.label "Tipo de Certidão", style: "display: block" %>
+    <%= form.checkbox :tipo_certidao_check %>
+  </div>
+
+  <div>
+    <%= form.label "Tipo de Certidão Correto", style: "display: block" %>
+    <%= form.text_field :tipo_certidao_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Cartório", style: "display: block" %>
+    <%= form.checkbox :cartorio_check %>
+  </div>
+
+  <div>
+    <%= form.label "Cartório Correto", style: "display: block" %>
+    <%= form.text_field :cartorio_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Número de Termo", style: "display: block" %>
+    <%= form.checkbox :numero_termo_check %>
+  </div>
+
+  <div>
+    <%= form.label "Número de Termo Correto", style: "display: block" %>
+    <%= form.number_field :numero_termo_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Folha", style: "display: block" %>
+    <%= form.checkbox :folha_check %>
+  </div>
+
+  <div>
+    <%= form.label "Folha Correta", style: "display: block" %>
+    <%= form.text_field :folha_correta %>
+  </div>
+
+  <div>
+    <%= form.label "Livro", style: "display: block" %>
+    <%= form.checkbox :livro_check %>
+  </div>
+
+  <div>
+    <%= form.label "Livro Correto", style: "display: block" %>
+    <%= form.text_field :livro_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Data de Emissão", style: "display: block" %>
+    <%= form.checkbox :data_emissao_check %>
+  </div>
+
+  <div>
+    <%= form.label "Data de Emissão Correta", style: "display: block" %>
+    <%= form.date_field :data_emissao_correta %>
+  </div>
+
+  <div>
+    <%= form.label "Matrícula", style: "display: block" %>
+    <%= form.checkbox :matricula_check %>
+  </div>
+
+  <div>
+    <%= form.label "Matrícula Correta", style: "display: block" %>
+    <%= form.number_field :matricula_correta %>
+  </div>
+
+  <div>
+    <%= form.label "E-mail Pessoal", style: "display: block" %>
+    <%= form.checkbox :email_pessoal_check %>
+  </div>
+
+  <div>
+    <%= form.label "E-mail Pessoal Correto", style: "display: block" %>
+    <%= form.text_field :email_pessoal_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Cadastro de TCC", style: "display: block" %>
+    <%= form.checkbox :cadastro_tcc_check %>
+  </div>
+
+  <div>
+    <%= form.label "Cadastro de TCC Correto", style: "display: block" %>
+    <%= form.text_field :cadastro_tcc_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Depósito de TCC", style: "display: block" %>
+    <%= form.checkbox :deposito_tcc_check %>
+  </div>
+
+  <div>
+    <%= form.label "Ata de Defesa", style: "display: block" %>
+    <%= form.checkbox :ata_defesa_check %>
+  </div>
+
+  <div>
+    <%= form.label "Titularidade de Professores", style: "display: block" %>
+    <%= form.checkbox :titularidade_professores_check %>
+  </div>
+
+  <div>
+    <%= form.label "Nada Consta", style: "display: block" %>
+    <%= form.checkbox :nada_consta_check %>
+  </div>
+
+  <div>
+    <%= form.label "Autorização de Funcionamento", style: "display: block" %>
+    <%= form.checkbox :autorizacao_funcionamento_check %>
+  </div>
+
+  <div>
+    <%= form.label "RG", style: "display: block" %>
+    <%= form.checkbox :doc_rg_check %>
+  </div>
+
+  <div>
+    <%= form.label "CPF", style: "display: block" %>
+    <%= form.checkbox :doc_cpf_check %>
+  </div>
+
+  <div>
+    <%= form.label "Certidão de Registro Civil", style: "display: block" %>
+    <%= form.checkbox :doc_certidao_check %>
+  </div>
+
+  <div>
+    <%= form.label "Reservista", style: "display: block" %>
+    <%= form.checkbox :doc_reservista_check %>
+  </div>
+
+  <div>
+    <%= form.label "Título", style: "display: block" %>
+    <%= form.checkbox :doc_titulo_check %>
+  </div>
+
+  <div>
+    <%= form.label "Certidão de Quitação Eleitoral", style: "display: block" %>
+    <%= form.checkbox :doc_quitacao_check %>
+  </div>
+
+  <div>
+    <%= form.label "Histórico Definitivo de Conclusão de Curso", style: "display: block" %>
+    <%= form.checkbox :doc_historico_check %>
+  </div>
+
+  <div>
+    <%= form.label "Documento Definitivo de Conclusão de Curso", style: "display: block" %>
+    <%= form.checkbox :doc_certificado_check %>
+  </div>
+
+  <div>
+    <%= form.label "Código de Autenticação no SISTEC (somente para cursos técnicos) (3)", style: "display: block" %>
+    <%= form.checkbox :cod_sistec_check %>
+  </div>
+
+  <div>
+    <%= form.label "Código SISTEC", style: "display: block" %>
+    <%= form.number_field :cod_sistec_correto %>
+  </div>
+
+  <div>
+    <%= form.label "Habilitação (somente para Licenciatura em Formação Pedagógica para Graduados não Licenciados) (4)", style: "display: block" %>
+    <%= form.checkbox :habilitacao_curso_check %>
+  </div>
+
+  <div>
+    <%= form.label "Habilitação Correta", style: "display: block" %>
+    <%= form.text_field :habilitacao_curso_correta %>
+  </div>
+
+  <div>
+    <%= form.label "Data de Conclusão igual ou anterior à data de colação de grau (somente para graduação)", style: "display: block" %>
+    <%= form.checkbox :data_conclusao_check %>
+  </div>
+
+  <div>
+    <%= form.label "Data de Conclusão Correta", style: "display: block" %>
+    <%= form.date_field :data_conclusao_correta %>
+  </div>
+
+  <div>
+    <%= form.label "Informação Adicional", style: "display: block" %>
+    <%= form.text_field :info_adicional %>
+  </div>
+
+  <div>
+    <%= form.label "Status da Análise", style: "display: block" %>
+    <%= form.text_field :status_analise %>
+  </div>
+
+  <div>
+    <%= form.label "ID do Funcionário", style: "display: block" %>
+    <%= form.text_field :funcionario_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

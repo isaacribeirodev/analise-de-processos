@@ -1,0 +1,18 @@
+<% if notice.present? %>
+  <div id="notice" class="alert alert-success" role="alert"><%= notice %></div>
+<% end %>
+
+<% content_for :title, "Análises" %>
+
+<h1>Análises</h1>
+
+<div id="analises">
+  <% @analises.each do |analise| %>
+    <%= render analise %>
+    <p>
+      <%= link_to "Mostrar esta Análise", analise %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nova Análise", new_analise_path %>

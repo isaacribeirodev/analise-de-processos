@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<div id="funcionarios">
+  <!-- A classe table estiliza a nossa tabela para deixá-la mais apresentável.
+  A classe table-bordered inclui as bordas da tabela e classe table-hover muda
+  a cor da linha quando passamos o mouse sobre ela. -->
+  <table class="table table-bordered table-hover">
+    <thead>
+      <th>Nome Completo</th>
+      <th>CPF</th>      
+      <th>Cargo</th>
+      <th>Senha</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @funcionario.nome %></td>
+        <td><%= @funcionario.cpf %></td>          
+        <td><%= @funcionario.cargo %></td>
+        <td><%= @funcionario.senha %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <%= link_to "Editar", edit_funcionario_path(@funcionario), class: "btn btn-primary mb-2" %>
+  <%= link_to "Excluir", funcionario_path(@funcionario),
+      data: { turbo_method: :delete, turbo_confirm: "Confirma a exclusão deste funcionário?" }, class: "btn btn-danger ms-2 mb-2" %>
+  <div class="float-md-end">
+    <%= link_to "Voltar para Funcionários", funcionarios_path, class: "btn btn-secondary" %>
+  </div>
+</div>

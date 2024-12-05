@@ -1,0 +1,12 @@
+<% content_for :title, "Editando Análise" %>
+
+<h1>Editando Análise</h1>
+
+<%= render "form", analise: @analise %>
+
+<br>
+
+<div>
+  <%= link_to "Mostrar esta Análise", @analise %> |
+  <%= link_to "Voltar para Análises", analises_path %>
+</div>
