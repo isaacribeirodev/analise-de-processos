@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  processo: MyString
+  processo: 23057.001407.2021-91
   diploma_nao_emitido_check: false
   status_matricula_check: false
   nome_check: false
@@ -66,7 +66,7 @@ one:
   funcionario: one
 
 two:
-  processo: MyString
+  processo: 23057.002407.2022-92
   diploma_nao_emitido_check: false
   status_matricula_check: false
   nome_check: false

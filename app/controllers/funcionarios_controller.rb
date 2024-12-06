@@ -49,11 +49,16 @@ class FuncionariosController < ApplicationController
 
   # DELETE /funcionarios/1 or /funcionarios/1.json
   def destroy
-    @funcionario.destroy!
+    if @funcionario.analises.any?
+      flash[:error] = "Não é possível excluir funcionário com análises associadas."
+      redirect_to funcionarios_path
+    else
+      @funcionario.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to funcionarios_path, status: :see_other, notice: "Funcionário excluído com sucesso." }
-      format.json { head :no_content }
+      respond_to do |format|
+        format.html { redirect_to funcionarios_path, status: :see_other, notice: "Funcionário excluído com sucesso." }
+        format.json { head :no_content }
+      end
     end
   end
 
