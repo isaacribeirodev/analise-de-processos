@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nome: MyString
-  cpf: MyString
+  nome: Juan Lorenzo Anderson Vieira
+  cpf: 385.427.610-90
   cargo: MyString
-  senha: MyString
+  senha: y4!hA=usERichU1ecreG
 
 two:
-  nome: MyString
-  cpf: MyString
+  nome: Vitor Leandro Fernandes
+  cpf: 294.982.994-55
   cargo: MyString
-  senha: MyString
+  senha: tr=q!9ud@eyiqAdrlr?=
