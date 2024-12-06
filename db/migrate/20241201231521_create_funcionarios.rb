@@ -1,6 +1,6 @@
 class CreateFuncionarios < ActiveRecord::Migration[8.0]
   def change
-    create_table :funcionarios do |t|
+    create_table :funcionarios, options: "AUTO_INCREMENT = 1" do |t|
       t.string :nome, null: false
       t.string :cpf, null: false
       t.string :cargo, null: false

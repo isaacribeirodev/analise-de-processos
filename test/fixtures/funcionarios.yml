@@ -1,12 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   nome: Juan Lorenzo Anderson Vieira
   cpf: 385.427.610-90
   cargo: MyString
   senha: y4!hA=usERichU1ecreG
 
 two:
+  id: 2
   nome: Vitor Leandro Fernandes
   cpf: 294.982.994-55
   cargo: MyString
