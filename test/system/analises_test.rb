@@ -7,25 +7,25 @@ class AnalisesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit analises_url
-    assert_selector "h1", text: "Analises"
+    assert_selector "h1", text: "Análises Processuais para Emissão de Diploma"
   end
 
   test "should create analise" do
     visit analises_url
-    click_on "New analise"
+    click_on "Realizar Análise"
 
-    check "Ata defesa check" if @analise.ata_defesa_check
-    check "Autorizacao funcionamento check" if @analise.autorizacao_funcionamento_check
-    check "Cadastro tcc check" if @analise.cadastro_tcc_check
-    fill_in "Cadastro tcc correto", with: @analise.cadastro_tcc_correto
-    check "Cartorio check" if @analise.cartorio_check
-    fill_in "Cartorio correto", with: @analise.cartorio_correto
-    check "Cod sistec check" if @analise.cod_sistec_check
+    check "Ata de Defesa" if @analise.ata_defesa_check
+    check "Autorização de Funcionamento" if @analise.autorizacao_funcionamento_check
+    check "Cadastro de TCC" if @analise.cadastro_tcc_check
+    fill_in "Cadastro de TCC Correto", with: @analise.cadastro_tcc_correto
+    check "Cartório" if @analise.cartorio_check
+    fill_in "Cartório Correto", with: @analise.cartorio_correto
+    check "Código de Autenticação no SISTEC" if @analise.cod_sistec_check
     fill_in "Cod sistec correto", with: @analise.cod_sistec_correto
-    check "Cpf check" if @analise.cpf_check
-    fill_in "Cpf correto", with: @analise.cpf_correto
-    check "Data conclusao check" if @analise.data_conclusao_check
-    fill_in "Data conclusao correta", with: @analise.data_conclusao_correta
+    check "CPF" if @analise.cpf_check
+    fill_in "CPF Correto", with: @analise.cpf_correto
+    check "Data de Conclusão" if @analise.data_conclusao_check
+    fill_in "Data de Conclusão Correta", with: @analise.data_conclusao_correta
     check "Data emissao check" if @analise.data_emissao_check
     fill_in "Data emissao correta", with: @analise.data_emissao_correta
     check "Data expedicao check" if @analise.data_expedicao_check
@@ -74,22 +74,22 @@ class AnalisesTest < ApplicationSystemTestCase
     check "Tipo certidao check" if @analise.tipo_certidao_check
     fill_in "Tipo certidao correto", with: @analise.tipo_certidao_correto
     check "Titularidade professores check" if @analise.titularidade_professores_check
-    check "Uf check" if @analise.uf_check
-    fill_in "Uf correta", with: @analise.uf_correta
-    click_on "Create Analise"
+    check "UF" if @analise.uf_check
+    fill_in "UF Correta", with: @analise.uf_correta
+    click_on "Realizar Análise"
 
-    assert_text "Analise was successfully created"
-    click_on "Back"
+    assert_text "Análise concluída com sucesso."
+    click_on "Voltar para Análises"
   end
 
   test "should update Analise" do
     visit analise_url(@analise)
-    click_on "Edit this analise", match: :first
+    click_on "Editar", match: :first
 
     check "Ata defesa check" if @analise.ata_defesa_check
     check "Autorizacao funcionamento check" if @analise.autorizacao_funcionamento_check
     check "Cadastro tcc check" if @analise.cadastro_tcc_check
-    fill_in "Cadastro tcc correto", with: @analise.cadastro_tcc_correto
+    fill_in "Cadastro TCC Correto", with: @analise.cadastro_tcc_correto
     check "Cartorio check" if @analise.cartorio_check
     fill_in "Cartorio correto", with: @analise.cartorio_correto
     check "Cod sistec check" if @analise.cod_sistec_check
@@ -148,16 +148,16 @@ class AnalisesTest < ApplicationSystemTestCase
     check "Titularidade professores check" if @analise.titularidade_professores_check
     check "Uf check" if @analise.uf_check
     fill_in "Uf correta", with: @analise.uf_correta
-    click_on "Update Analise"
+    click_on "Atualizar"
 
-    assert_text "Analise was successfully updated"
-    click_on "Back"
+    assert_text "Análise atualizada com sucesso."
+    click_on "Voltar para Análises"
   end
 
   test "should destroy Analise" do
     visit analise_url(@analise)
-    click_on "Destroy this analise", match: :first
+    click_on "Excluir", match: :first
 
-    assert_text "Analise was successfully destroyed"
+    assert_text "Análise excluída com sucesso."
   end
 end

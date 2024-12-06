@@ -25,7 +25,7 @@ class AnalisesController < ApplicationController
 
     respond_to do |format|
       if @analise.save
-        format.html { redirect_to @analise, notice: "Análise salva com sucesso." }
+        format.html { redirect_to @analise, notice: "Análise concluída com sucesso." }
         format.json { render :show, status: :created, location: @analise }
       else
         format.html { render :new, status: :unprocessable_entity }

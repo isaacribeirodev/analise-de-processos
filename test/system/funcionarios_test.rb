@@ -7,41 +7,41 @@ class FuncionariosTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit funcionarios_url
-    assert_selector "h1", text: "Funcionarios"
+    assert_selector "h1", text: "Funcionários"
   end
 
   test "should create funcionario" do
     visit funcionarios_url
-    click_on "New funcionario"
+    click_on "Adicionar Funcionário"
 
     fill_in "Cargo", with: @funcionario.cargo
-    fill_in "Cpf", with: @funcionario.cpf
-    fill_in "Nome", with: @funcionario.nome
-    fill_in "Senha", with: @funcionario.senha
-    click_on "Create Funcionario"
+    fill_in "CPF", with: "632.913.155-45"
+    fill_in "Nome Completo", with: "Vicente Cláudio da Luz"
+    fill_in "Senha", with: "j3dr8dA=t2vAs3ylprit"
+    click_on "Cadastrar"
 
-    assert_text "Funcionario was successfully created"
-    click_on "Back"
+    assert_text "Funcionário adicionado com sucesso."
+    click_on "Voltar para Funcionários"
   end
 
   test "should update Funcionario" do
     visit funcionario_url(@funcionario)
-    click_on "Edit this funcionario", match: :first
+    click_on "Editar", match: :first
 
     fill_in "Cargo", with: @funcionario.cargo
-    fill_in "Cpf", with: @funcionario.cpf
-    fill_in "Nome", with: @funcionario.nome
-    fill_in "Senha", with: @funcionario.senha
-    click_on "Update Funcionario"
+    fill_in "CPF", with: "938.284.477-59"
+    fill_in "Nome Completo", with: "Francisco Luiz da Mota"
+    fill_in "Senha", with: "S6cRad_OfR?ZLdiwosLp"
+    click_on "Atualizar"
 
-    assert_text "Funcionario was successfully updated"
-    click_on "Back"
+    assert_text "Funcionário atualizado com sucesso."
+    click_on "Voltar para Funcionários"
   end
 
   test "should destroy Funcionario" do
     visit funcionario_url(@funcionario)
-    click_on "Destroy this funcionario", match: :first
+    click_on "Excluir", match: :first
 
-    assert_text "Funcionario was successfully destroyed"
+    assert_text "Funcionário excluído com sucesso."
   end
 end
