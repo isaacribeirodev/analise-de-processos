@@ -63,7 +63,7 @@ one:
   data_conclusao_correta: 2024-12-01
   info_adicional: MyString
   status_analise: MyString
-  funcionario_id: one
+  funcionario: one
 
 two:
   processo: MyString
@@ -128,4 +128,4 @@ two:
   data_conclusao_correta: 2024-12-01
   info_adicional: MyString
   status_analise: MyString
-  funcionario_id: two
+  funcionario: two
