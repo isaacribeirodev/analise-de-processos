@@ -52,7 +52,7 @@ class FuncionariosControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to funcionarios_url
-    assert_equal "Não é possível excluir funcionário com análises associadas.", flash[:error]
+    assert_equal "Funcionário com análises associadas não pode ser excluído.", flash[:alert]
     assert Funcionario.exists?(@funcionario.id), "Funcionário não deveria ter sido excluído."
   end
 

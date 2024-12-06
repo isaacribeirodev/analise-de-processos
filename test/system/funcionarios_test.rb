@@ -38,10 +38,37 @@ class FuncionariosTest < ApplicationSystemTestCase
     click_on "Voltar para Funcionários"
   end
 
-  test "should destroy Funcionario" do
+  test "should destroy funcionario without analises" do
+    # Cria um funcionário sem análises associadas.
+    @funcionario = Funcionario.create!(
+      cargo: "Analista de Sistemas",
+      cpf: "388.781.511-49",
+      nome: "Esther Sara Antonella Novaes",
+      senha: "klS3uDePlFrlgig7-REP"
+    )
+
+    # Certifica-se de que o funcionário não possui análises associadas.
+    assert @funcionario.analises.empty?, "Funcionário não deveria ter análises para este teste."
+
     visit funcionario_url(@funcionario)
-    click_on "Excluir", match: :first
+
+    page.accept_confirm do
+      click_on "Excluir", match: :first
+    end
 
     assert_text "Funcionário excluído com sucesso."
+    assert_not Funcionario.exists?(@funcionario.id), "Funcionário deveria ter sido excluído."
+  end
+
+  test "should destroy funcionario with analises" do
+    visit funcionario_url(@funcionario)
+
+    # Aceita o diálogo de confirmação ao clicar em Excluir
+    accept_confirm("Confirma a exclusão deste funcionário?") do
+      click_on "Excluir", match: :first
+    end
+
+    assert_text "Funcionário com análises associadas não pode ser excluído."
+    assert Funcionario.exists?(@funcionario.id), "Funcionário não deveria ter sido excluído."
   end
 end

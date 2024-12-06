@@ -20,63 +20,64 @@ class AnalisesTest < ApplicationSystemTestCase
     fill_in "Cadastro de TCC Correto", with: @analise.cadastro_tcc_correto
     check "Cartório" if @analise.cartorio_check
     fill_in "Cartório Correto", with: @analise.cartorio_correto
-    check "Código de Autenticação no SISTEC" if @analise.cod_sistec_check
-    fill_in "Cod sistec correto", with: @analise.cod_sistec_correto
+    check "Código de Autenticação no SISTEC (somente para cursos técnicos) (3)" if @analise.cod_sistec_check
+    fill_in "Código de Autenticação no SISTEC", with: @analise.cod_sistec_correto
     check "CPF" if @analise.cpf_check
     fill_in "CPF Correto", with: @analise.cpf_correto
-    check "Data de Conclusão" if @analise.data_conclusao_check
+    check "Data de Conclusão igual ou anterior à Data de Colação de Grau (somente para graduação)" if @analise.data_conclusao_check
     fill_in "Data de Conclusão Correta", with: @analise.data_conclusao_correta
-    check "Data emissao check" if @analise.data_emissao_check
-    fill_in "Data emissao correta", with: @analise.data_emissao_correta
-    check "Data expedicao check" if @analise.data_expedicao_check
-    fill_in "Data expedicao correta", with: @analise.data_expedicao_correta
-    check "Data nascimento check" if @analise.data_nascimento_check
-    fill_in "Data nascimento correta", with: @analise.data_nascimento_correta
-    check "Deposito tcc check" if @analise.deposito_tcc_check
-    check "Diploma nao emitido check" if @analise.diploma_nao_emitido_check
-    check "Doc certidao check" if @analise.doc_certidao_check
-    check "Doc certificado check" if @analise.doc_certificado_check
-    check "Doc cpf check" if @analise.doc_cpf_check
-    check "Doc historico check" if @analise.doc_historico_check
-    check "Doc quitacao check" if @analise.doc_quitacao_check
-    check "Doc reservista check" if @analise.doc_reservista_check
-    check "Doc rg check" if @analise.doc_rg_check
-    check "Doc titulo check" if @analise.doc_titulo_check
-    check "Email pessoal check" if @analise.email_pessoal_check
-    fill_in "Email pessoal correto", with: @analise.email_pessoal_correto
-    check "Folha check" if @analise.folha_check
-    fill_in "Folha correta", with: @analise.folha_correta
-    check "Habilitacao curso check" if @analise.habilitacao_curso_check
-    fill_in "Habilitacao curso correta", with: @analise.habilitacao_curso_correta
-    fill_in "Funcionario id", with: @analise.funcionario_id
-    check "Identidade check" if @analise.identidade_check
-    fill_in "Identidade correta", with: @analise.identidade_correta
-    fill_in "Info adicional", with: @analise.info_adicional
-    check "Livro check" if @analise.livro_check
-    fill_in "Livro correto", with: @analise.livro_correto
-    check "Matricula check" if @analise.matricula_check
-    fill_in "Matricula correta", with: @analise.matricula_correta
-    check "Nada consta check" if @analise.nada_consta_check
-    check "Naturalidade check" if @analise.naturalidade_check
-    fill_in "Naturalidade correta", with: @analise.naturalidade_correta
-    check "Nome check" if @analise.nome_check
-    fill_in "Nome correto", with: @analise.nome_correto
-    check "Nome mae check" if @analise.nome_mae_check
-    fill_in "Nome mae correto", with: @analise.nome_mae_correto
-    check "Nome pai check" if @analise.nome_pai_check
-    fill_in "Nome pai correto", with: @analise.nome_pai_correto
-    check "Numero termo check" if @analise.numero_termo_check
-    fill_in "Numero termo correto", with: @analise.numero_termo_correto
-    check "Orgao expedidor check" if @analise.orgao_expedidor_check
-    fill_in "Orgao expedidor correto", with: @analise.orgao_expedidor_correto
-    fill_in "Status analise", with: @analise.status_analise
-    check "Status matricula check" if @analise.status_matricula_check
-    check "Tipo certidao check" if @analise.tipo_certidao_check
-    fill_in "Tipo certidao correto", with: @analise.tipo_certidao_correto
-    check "Titularidade professores check" if @analise.titularidade_professores_check
+    check "Data de Emissão" if @analise.data_emissao_check
+    fill_in "Data de Emissão Correta", with: @analise.data_emissao_correta
+    check "Data de Expedição" if @analise.data_expedicao_check
+    fill_in "Data de Expedição Correta", with: @analise.data_expedicao_correta
+    check "Data de Nascimento" if @analise.data_nascimento_check
+    fill_in "Data de Nascimento Correta", with: @analise.data_nascimento_correta
+    check "Depósito de TCC" if @analise.deposito_tcc_check
+    check "Diploma Não Emitido" if @analise.diploma_nao_emitido_check
+    check "Documento Certidão de Registro Civil" if @analise.doc_certidao_check
+    check "Documento Definitivo de Conclusão de Curso" if @analise.doc_certificado_check
+    check "Documento CPF" if @analise.doc_cpf_check
+    check "Documento Histórico Definitivo de Conclusão de Curso" if @analise.doc_historico_check
+    check "Documento Certidão de Quitação Eleitoral" if @analise.doc_quitacao_check
+    check "Documento Reservista" if @analise.doc_reservista_check
+    check "Documento RG" if @analise.doc_rg_check
+    check "Documento Título Eleitoral" if @analise.doc_titulo_check
+    check "Email Pessoal" if @analise.email_pessoal_check
+    fill_in "E-mail Pessoal Correto", with: @analise.email_pessoal_correto
+    check "Folha" if @analise.folha_check
+    fill_in "Folha Correta", with: @analise.folha_correta
+    check "Habilitação" if @analise.habilitacao_curso_check
+    fill_in "Habilitação Correta", with: @analise.habilitacao_curso_correta
+    fill_in "Funcionário", with: @analise.funcionario_id
+    check "Identidade" if @analise.identidade_check
+    fill_in "Identidade Correta", with: @analise.identidade_correta
+    fill_in "Informação Adicional", with: @analise.info_adicional
+    check "Livro" if @analise.livro_check
+    fill_in "Livro Correto", with: @analise.livro_correto
+    check "Matrícula" if @analise.matricula_check
+    fill_in "Matrícula Correta", with: @analise.matricula_correta
+    check "Nada Consta" if @analise.nada_consta_check
+    check "Naturalidade" if @analise.naturalidade_check
+    fill_in "Naturalidade Correta", with: @analise.naturalidade_correta
+    check "Nome" if @analise.nome_check
+    fill_in "Nome Correto", with: @analise.nome_correto
+    check "Nome da Mãe" if @analise.nome_mae_check
+    fill_in "Nome da Mãe Correto", with: @analise.nome_mae_correto
+    check "Nome do Pai" if @analise.nome_pai_check
+    fill_in "Nome do Pai Correto", with: @analise.nome_pai_correto
+    check "Número de Termo" if @analise.numero_termo_check
+    fill_in "Número de Termo Correto", with: @analise.numero_termo_correto
+    check "Órgão Expedidor" if @analise.orgao_expedidor_check
+    fill_in "Órgão Expedidor Correto", with: @analise.orgao_expedidor_correto
+    fill_in "Número do Processo", with: @analise.processo
+    fill_in "Status da Análise", with: @analise.status_analise
+    check "Status da Matrícula é 'Concluído' ou 'Formado'" if @analise.status_matricula_check
+    check "Tipo de Certidão" if @analise.tipo_certidao_check
+    fill_in "Tipo de Certidão Correto", with: @analise.tipo_certidao_correto
+    check "Titularidade dos Professores no Histórico" if @analise.titularidade_professores_check
     check "UF" if @analise.uf_check
     fill_in "UF Correta", with: @analise.uf_correta
-    click_on "Realizar Análise"
+    click_on "Cadastrar"
 
     assert_text "Análise concluída com sucesso."
     click_on "Voltar para Análises"
@@ -86,68 +87,68 @@ class AnalisesTest < ApplicationSystemTestCase
     visit analise_url(@analise)
     click_on "Editar", match: :first
 
-    check "Ata defesa check" if @analise.ata_defesa_check
-    check "Autorizacao funcionamento check" if @analise.autorizacao_funcionamento_check
-    check "Cadastro tcc check" if @analise.cadastro_tcc_check
-    fill_in "Cadastro TCC Correto", with: @analise.cadastro_tcc_correto
-    check "Cartorio check" if @analise.cartorio_check
-    fill_in "Cartorio correto", with: @analise.cartorio_correto
-    check "Cod sistec check" if @analise.cod_sistec_check
-    fill_in "Cod sistec correto", with: @analise.cod_sistec_correto
-    check "Cpf check" if @analise.cpf_check
-    fill_in "Cpf correto", with: @analise.cpf_correto
-    check "Data conclusao check" if @analise.data_conclusao_check
-    fill_in "Data conclusao correta", with: @analise.data_conclusao_correta
-    check "Data emissao check" if @analise.data_emissao_check
-    fill_in "Data emissao correta", with: @analise.data_emissao_correta
-    check "Data expedicao check" if @analise.data_expedicao_check
-    fill_in "Data expedicao correta", with: @analise.data_expedicao_correta
-    check "Data nascimento check" if @analise.data_nascimento_check
-    fill_in "Data nascimento correta", with: @analise.data_nascimento_correta
-    check "Deposito tcc check" if @analise.deposito_tcc_check
-    check "Diploma nao emitido check" if @analise.diploma_nao_emitido_check
-    check "Doc certidao check" if @analise.doc_certidao_check
-    check "Doc certificado check" if @analise.doc_certificado_check
-    check "Doc cpf check" if @analise.doc_cpf_check
-    check "Doc historico check" if @analise.doc_historico_check
-    check "Doc quitacao check" if @analise.doc_quitacao_check
-    check "Doc reservista check" if @analise.doc_reservista_check
-    check "Doc rg check" if @analise.doc_rg_check
-    check "Doc titulo check" if @analise.doc_titulo_check
-    check "Email pessoal check" if @analise.email_pessoal_check
-    fill_in "Email pessoal correto", with: @analise.email_pessoal_correto
-    check "Folha check" if @analise.folha_check
-    fill_in "Folha correta", with: @analise.folha_correta
-    check "Habilitacao curso check" if @analise.habilitacao_curso_check
-    fill_in "Habilitacao curso correta", with: @analise.habilitacao_curso_correta
-    fill_in "Id funcionario", with: @analise.funcionario_id
-    check "Identidade check" if @analise.identidade_check
-    fill_in "Identidade correta", with: @analise.identidade_correta
-    fill_in "Info adicional", with: @analise.info_adicional
-    check "Livro check" if @analise.livro_check
-    fill_in "Livro correto", with: @analise.livro_correto
-    check "Matricula check" if @analise.matricula_check
-    fill_in "Matricula correta", with: @analise.matricula_correta
-    check "Nada consta check" if @analise.nada_consta_check
-    check "Naturalidade check" if @analise.naturalidade_check
-    fill_in "Naturalidade correta", with: @analise.naturalidade_correta
-    check "Nome check" if @analise.nome_check
-    fill_in "Nome correto", with: @analise.nome_correto
-    check "Nome mae check" if @analise.nome_mae_check
-    fill_in "Nome mae correto", with: @analise.nome_mae_correto
-    check "Nome pai check" if @analise.nome_pai_check
-    fill_in "Nome pai correto", with: @analise.nome_pai_correto
-    check "Numero termo check" if @analise.numero_termo_check
-    fill_in "Numero termo correto", with: @analise.numero_termo_correto
-    check "Orgao expedidor check" if @analise.orgao_expedidor_check
-    fill_in "Orgao expedidor correto", with: @analise.orgao_expedidor_correto
-    fill_in "Status analise", with: @analise.status_analise
-    check "Status matricula check" if @analise.status_matricula_check
-    check "Tipo certidao check" if @analise.tipo_certidao_check
-    fill_in "Tipo certidao correto", with: @analise.tipo_certidao_correto
-    check "Titularidade professores check" if @analise.titularidade_professores_check
-    check "Uf check" if @analise.uf_check
-    fill_in "Uf correta", with: @analise.uf_correta
+    check "Ata de Defesa" if @analise.ata_defesa_check
+    check "Autorização de Funcionamento" if @analise.autorizacao_funcionamento_check
+    check "Cadastro de TCC" if @analise.cadastro_tcc_check
+    fill_in "Cadastro de TCC Correto", with: @analise.cadastro_tcc_correto
+    check "Cartório" if @analise.cartorio_check
+    fill_in "Cartório Correto", with: @analise.cartorio_correto
+    check "Código de Autenticação no SISTEC (somente para cursos técnicos) (3)" if @analise.cod_sistec_check
+    fill_in "Código de Autenticação no SISTEC", with: @analise.cod_sistec_correto
+    check "CPF" if @analise.cpf_check
+    fill_in "CPF Correto", with: @analise.cpf_correto
+    check "Data de Conclusão igual ou anterior à Data de Colação de Grau (somente para graduação)" if @analise.data_conclusao_check
+    fill_in "Data de Conclusão Correta", with: @analise.data_conclusao_correta
+    check "Data de Emissão" if @analise.data_emissao_check
+    fill_in "Data de Emissão Correta", with: @analise.data_emissao_correta
+    check "Data de Expedição" if @analise.data_expedicao_check
+    fill_in "Data de Expedição Correta", with: @analise.data_expedicao_correta
+    check "Data de Nascimento" if @analise.data_nascimento_check
+    fill_in "Data de Nascimento Correta", with: @analise.data_nascimento_correta
+    check "Depósito de TCC" if @analise.deposito_tcc_check
+    check "Diploma Não Emitido" if @analise.diploma_nao_emitido_check
+    check "Documento Certidão de Registro Civil" if @analise.doc_certidao_check
+    check "Documento Definitivo de Conclusão de Curso" if @analise.doc_certificado_check
+    check "Documento CPF" if @analise.doc_cpf_check
+    check "Documento Histórico Definitivo de Conclusão de Curso" if @analise.doc_historico_check
+    check "Documento Certidão de Quitação Eleitoral" if @analise.doc_quitacao_check
+    check "Documento Reservista" if @analise.doc_reservista_check
+    check "Documento RG" if @analise.doc_rg_check
+    check "Documento Título Eleitoral" if @analise.doc_titulo_check
+    check "Email Pessoal" if @analise.email_pessoal_check
+    fill_in "E-mail Pessoal Correto", with: @analise.email_pessoal_correto
+    check "Folha" if @analise.folha_check
+    fill_in "Folha Correta", with: @analise.folha_correta
+    check "Habilitação" if @analise.habilitacao_curso_check
+    fill_in "Habilitação Correta", with: @analise.habilitacao_curso_correta
+    fill_in "Funcionário", with: @analise.funcionario_id
+    check "Identidade" if @analise.identidade_check
+    fill_in "Identidade Correta", with: @analise.identidade_correta
+    fill_in "Informação Adicional", with: @analise.info_adicional
+    check "Livro" if @analise.livro_check
+    fill_in "Livro Correto", with: @analise.livro_correto
+    check "Matrícula" if @analise.matricula_check
+    fill_in "Matrícula Correta", with: @analise.matricula_correta
+    check "Nada Consta" if @analise.nada_consta_check
+    check "Naturalidade" if @analise.naturalidade_check
+    fill_in "Naturalidade Correta", with: @analise.naturalidade_correta
+    check "Nome" if @analise.nome_check
+    fill_in "Nome Correto", with: @analise.nome_correto
+    check "Nome da Mãe" if @analise.nome_mae_check
+    fill_in "Nome da Mãe Correto", with: @analise.nome_mae_correto
+    check "Nome do Pai" if @analise.nome_pai_check
+    fill_in "Nome do Pai Correto", with: @analise.nome_pai_correto
+    check "Número de Termo" if @analise.numero_termo_check
+    fill_in "Número de Termo Correto", with: @analise.numero_termo_correto
+    check "Órgão Expedidor" if @analise.orgao_expedidor_check
+    fill_in "Órgão Expedidor Correto", with: @analise.orgao_expedidor_correto
+    fill_in "Status da Análise", with: @analise.status_analise
+    check "Status da Matrícula é 'Concluído' ou 'Formado'" if @analise.status_matricula_check
+    check "Tipo de Certidão" if @analise.tipo_certidao_check
+    fill_in "Tipo de Certidão Correto", with: @analise.tipo_certidao_correto
+    check "Titularidade dos Professores no Histórico" if @analise.titularidade_professores_check
+    check "UF" if @analise.uf_check
+    fill_in "UF Correta", with: @analise.uf_correta
     click_on "Atualizar"
 
     assert_text "Análise atualizada com sucesso."
@@ -156,7 +157,9 @@ class AnalisesTest < ApplicationSystemTestCase
 
   test "should destroy Analise" do
     visit analise_url(@analise)
-    click_on "Excluir", match: :first
+    page.accept_confirm do
+      click_on "Excluir", match: :first
+    end
 
     assert_text "Análise excluída com sucesso."
   end
