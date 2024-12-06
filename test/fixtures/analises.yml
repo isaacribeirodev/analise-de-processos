@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  status_analise: MyString
+  processo: MyString
   diploma_nao_emitido_check: false
   status_matricula_check: false
   nome_check: false
@@ -62,10 +62,11 @@ one:
   data_conclusao_check: false
   data_conclusao_correta: 2024-12-01
   info_adicional: MyString
-  id_funcionario: one
+  status_analise: MyString
+  funcionario_id: one
 
 two:
-  status_analise: MyString
+  processo: MyString
   diploma_nao_emitido_check: false
   status_matricula_check: false
   nome_check: false
@@ -126,4 +127,5 @@ two:
   data_conclusao_check: false
   data_conclusao_correta: 2024-12-01
   info_adicional: MyString
-  id_funcionario: two
+  status_analise: MyString
+  funcionario_id: two

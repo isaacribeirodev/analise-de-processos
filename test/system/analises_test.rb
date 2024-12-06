@@ -48,7 +48,7 @@ class AnalisesTest < ApplicationSystemTestCase
     fill_in "Folha correta", with: @analise.folha_correta
     check "Habilitacao curso check" if @analise.habilitacao_curso_check
     fill_in "Habilitacao curso correta", with: @analise.habilitacao_curso_correta
-    fill_in "Id funcionario", with: @analise.id_funcionario_id
+    fill_in "Funcionario id", with: @analise.funcionario_id
     check "Identidade check" if @analise.identidade_check
     fill_in "Identidade correta", with: @analise.identidade_correta
     fill_in "Info adicional", with: @analise.info_adicional
@@ -120,7 +120,7 @@ class AnalisesTest < ApplicationSystemTestCase
     fill_in "Folha correta", with: @analise.folha_correta
     check "Habilitacao curso check" if @analise.habilitacao_curso_check
     fill_in "Habilitacao curso correta", with: @analise.habilitacao_curso_correta
-    fill_in "Id funcionario", with: @analise.id_funcionario_id
+    fill_in "Id funcionario", with: @analise.funcionario_id
     check "Identidade check" if @analise.identidade_check
     fill_in "Identidade correta", with: @analise.identidade_correta
     fill_in "Info adicional", with: @analise.info_adicional

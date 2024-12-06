@@ -2,14 +2,12 @@
 
 one:
   nome: MyString
-  matricula: 1
   cpf: MyString
   cargo: MyString
   senha: MyString
 
 two:
   nome: MyString
-  matricula: 1
   cpf: MyString
   cargo: MyString
   senha: MyString

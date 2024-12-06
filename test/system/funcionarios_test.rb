@@ -16,7 +16,6 @@ class FuncionariosTest < ApplicationSystemTestCase
 
     fill_in "Cargo", with: @funcionario.cargo
     fill_in "Cpf", with: @funcionario.cpf
-    fill_in "Matricula", with: @funcionario.matricula
     fill_in "Nome", with: @funcionario.nome
     fill_in "Senha", with: @funcionario.senha
     click_on "Create Funcionario"
@@ -31,7 +30,6 @@ class FuncionariosTest < ApplicationSystemTestCase
 
     fill_in "Cargo", with: @funcionario.cargo
     fill_in "Cpf", with: @funcionario.cpf
-    fill_in "Matricula", with: @funcionario.matricula
     fill_in "Nome", with: @funcionario.nome
     fill_in "Senha", with: @funcionario.senha
     click_on "Update Funcionario"
