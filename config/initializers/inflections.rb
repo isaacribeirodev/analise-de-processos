@@ -40,25 +40,25 @@ ActiveSupport::Inflector.inflections do |inflect|
     inflect.singular(/(r|z)es$/i, '\1')
     inflect.singular(/([^p])ais$/i, '\1al')
     inflect.singular(/eis$/i, "el")
-    inflect.singular(/ois$/i, 'ol')
-    inflect.singular(/uis$/i, 'ul')
+    inflect.singular(/ois$/i, "ol")
+    inflect.singular(/uis$/i, "ul")
     inflect.singular(/(r|t|f|v)is$/i, '\1il')
-    inflect.singular(/ns$/i, 'm')
-    inflect.singular(/sses$/i, 'sse')
+    inflect.singular(/ns$/i, "m")
+    inflect.singular(/sses$/i, "sse")
     inflect.singular(/^(.*[^s]s)es$/i, '\1')
-    inflect.singular(/ães$/i, 'ão')
-    inflect.singular(/aes$/i, 'ao')
-    inflect.singular(/ãos$/i, 'ão')    
-    inflect.singular(/aos$/i, 'ao')
-    inflect.singular(/ões$/i, 'ão')
-    inflect.singular(/oes$/i, 'ao')
+    inflect.singular(/ães$/i, "ão")
+    inflect.singular(/aes$/i, "ao")
+    inflect.singular(/ãos$/i, "ão")    
+    inflect.singular(/aos$/i, "ao")
+    inflect.singular(/ões$/i, "ão")
+    inflect.singular(/oes$/i, "ao")
     inflect.singular(/(japon|escoc|ingl|dinamarqu|fregu|portugu)eses$/i, '\1ês')
     inflect.singular(/^(g|)ases$/i,  '\1ás')
 
     # Incontáveis
-    inflect.uncountable ['tórax', 'tênis', 'ônibus', 'lápis', 'fênix']
+    inflect.uncountable ["tórax", "tênis", "ônibus", "lápis", "fênix"]
 
     # Irregulares
-    inflect.irregular 'país', 'países'  
-    inflect.irregular 'analise', 'analises' # Faz referência ao plural do verbo analisar.
+    inflect.irregular "país", "países"  
+    inflect.irregular "analise", "analises" # Faz referência ao plural do verbo analisar.
   end
