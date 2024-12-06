@@ -1,15 +1,17 @@
 <div id="<%= dom_id funcionario %>">
-  <!-- A classe table estiliza a nossa tabela para deixá-la mais apresentável. A classe table-bordered inclui as bordas da tabela e classe table-hover muda a cor da linha quando passamos o mouse sobre ela. -->
+  <!-- A classe table estiliza a nossa tabela para deixá-la mais apresentável.
+  A classe table-bordered inclui as bordas da tabela e classe table-hover
+  muda a cor da linha quando passamos o mouse sobre ela. -->
   <table class="table table-bordered table-hover">
     <thead>
       <th>Nome Completo</th>
-      <th>CPF</th>      
+      <th>CPF</th>
       <th>Cargo</th>
     </thead>
     <tbody>
       <tr>
         <td><%= funcionario.nome %></td>
-        <td><%= funcionario.cpf %></td>          
+        <td><%= funcionario.cpf %></td>
         <td><%= funcionario.cargo %></td>
       </tr>
     </tbody>

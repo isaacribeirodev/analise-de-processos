@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[8.0].define(version: 2024_12_01_231546) do
   create_table "analises", force: :cascade do |t|
+    t.string "processo", null: false
     t.boolean "diploma_nao_emitido_check"
     t.boolean "status_matricula_check"
     t.boolean "nome_check"
@@ -77,6 +78,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_01_231546) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["funcionario_id"], name: "index_analises_on_funcionario_id"
+    t.index ["processo"], name: "index_analises_on_processo"
   end
 
   create_table "funcionarios", force: :cascade do |t|

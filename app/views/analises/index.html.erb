@@ -2,17 +2,45 @@
   <div id="notice" class="alert alert-success" role="alert"><%= notice %></div>
 <% end %>
 
-<% content_for :title, "Análises" %>
+<% content_for :title, "Análises Processuais para Emissão de Diploma" %>
 
-<h1>Análises</h1>
-
-<div id="analises">
-  <% @analises.each do |analise| %>
-    <%= render analise %>
-    <p>
-      <%= link_to "Mostrar esta Análise", analise %>
-    </p>
-  <% end %>
+<div class="float-md-end">
+  <%= link_to "Realizar Análise", new_analise_path, class: "btn btn-primary" %>
 </div>
 
-<%= link_to "Nova Análise", new_analise_path %>
+<h1>Análises Processuais para Emissão de Diploma</h1>
+
+<div id="analises">
+  <table class="table table-hover">
+    <thead>
+      <th>Processo</th>
+      <th>Data da Análise</th>
+      <th>Data de Atualização</th>
+      <th>Status da Análise</th>
+      <th>Funcionário</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% @analises.each do |analise| %>
+        <tr>
+          <td><%= analise.processo %></td>
+          <td><%= analise.created_at %></td>
+          <td><%= analise.updated_at %></td>
+          <td><%= analise.status_analise %></td>
+          <td><%= analise.funcionario_id %></td>
+          <td>
+            <div class="d-grid gap-2">
+              <%= link_to analise, class: "btn btn-outline-secondary btn-sm", title: "Exibir Análise" do %>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"></path>
+                  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"></path>
+                </svg>
+                <span class="visually-hidden">Exibir Análise</span>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

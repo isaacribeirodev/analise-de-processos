@@ -1,4 +1,4 @@
-<%= form_with(model: funcionario, display: "inline") do |form| %>
+<%= form_with(model: funcionario) do |form| %>
   <% if funcionario.errors.any? %>
     <div class="alert alert-danger">
       <h4 class="alert-heading"><%= pluralize(funcionario.errors.count, "erro") %> impediu(ram) que este funcionário fosse salvo:</h4>
@@ -32,8 +32,8 @@
 
   <div class="mb-3">
     <%= form.submit @funcionario.new_record? ? "Cadastrar" : "Atualizar", class: "btn btn-primary mb-2" %>
-    <% if funcionario.new_record? %>      
-      <div class="float-md-end">  
+    <% if funcionario.new_record? %>
+      <div class="float-md-end">
         <%= link_to "Voltar para Funcionários", funcionarios_path, class: "btn btn-secondary" %>
       </div>
     <% else %>

@@ -1,9 +1,8 @@
 <%= form_with(model: analise) do |form| %>
   <% if analise.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(analise.errors.count, "error") %> impediu que esta análise fosse salva:</h2>
-
-      <ul>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading"><%= pluralize(analise.errors.count, "erro") %> impediu(ram) que esta análise fosse salva:</h4>
+      <ul class="mb-0">
         <% analise.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,317 +10,332 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label "Diploma Não Emitido", style: "display: block" %>
-    <%= form.checkbox :diploma_nao_emitido_check %>
+  <div class="bg-light p-2">
+    <%= form.label :processo, "Número do Processo", class: "form-label" %>
+    <%= form.text_field :processo, class: "form-control", placeholder: "00000.000000.0000-00", required: true %>
   </div>
 
-  <div>
-    <%= form.label "Status da Matrícula é 'Concluído' ou 'Formado'", style: "display: block" %>
-    <%= form.checkbox :status_matricula_check %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :diploma_nao_emitido_check, "Diploma Não Emitido", class: "form-check-label" %>
+    <%= form.checkbox :diploma_nao_emitido_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Nome", style: "display: block" %>
-    <%= form.checkbox :nome_check %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :status_matricula_check, "Status da Matrícula é 'Concluído' ou 'Formado'", class: "form-check-label" %>
+    <%= form.checkbox :status_matricula_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Nome Correto", style: "display: block" %>
-    <%= form.text_field :nome_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-primary bg-opacity-10 p-2">
+    <%= form.label :nome_check, "Nome", class: "form-check-label" %>
+    <%= form.checkbox :nome_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "CPF", style: "display: block" %>
-    <%= form.checkbox :cpf_check %>
+  <div class="bg-primary bg-opacity-10 p-2">
+    <%= form.label :nome_correto, "Nome Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :nome_correto, placeholder: "Nome Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "CPF Correto", style: "display: block" %>
-    <%= form.text_field :cpf_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-primary bg-opacity-10 p-2">
+    <%= form.label :cpf_check, "CPF", class: "form-check-label" %>
+    <%= form.checkbox :cpf_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Data de Nascimento", style: "display: block" %>
-    <%= form.checkbox :data_nascimento_check %>
+  <div class="bg-primary bg-opacity-10 p-2">
+    <%= form.label :cpf_correto, "CPF Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :cpf_correto, placeholder: "CPF Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Data de Nascimento Correta", style: "display: block" %>
-    <%= form.date_field :data_nascimento_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-primary bg-opacity-10 p-2">
+    <%= form.label :data_nascimento_check, "Data de Nascimento", class: "form-check-label" %>
+    <%= form.checkbox :data_nascimento_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Naturalidade", style: "display: block" %>
-    <%= form.checkbox :naturalidade_check %>
+  <div class="bg-primary bg-opacity-10 p-2">
+    <%= form.label :data_nascimento_correta, "Data de Nascimento Correta", class: "form-label visually-hidden" %>
+    <%= form.date_field :data_nascimento_correta, placeholder: "Data de Nascimento Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Naturalidade Correta", style: "display: block" %>
-    <%= form.text_field :naturalidade_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-primary bg-opacity-10 p-2">
+    <%= form.label :naturalidade_check, "Naturalidade", class: "form-check-label" %>
+    <%= form.checkbox :naturalidade_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Nome do Pai", style: "display: block" %>
-    <%= form.checkbox :nome_pai_check %>
+  <div class="bg-primary bg-opacity-10 p-2">
+    <%= form.label :naturalidade_correta, "Naturalidade Correta", class: "form-label visually-hidden" %>
+    <%= form.text_field :naturalidade_correta, placeholder: "Naturalidade Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Nome do Pai Correto", style: "display: block" %>
-    <%= form.text_field :nome_pai_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-primary bg-opacity-10 p-2">
+    <%= form.label :nome_pai_check, "Nome do Pai", class: "form-check-label" %>
+    <%= form.checkbox :nome_pai_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Nome da Mãe", style: "display: block" %>
-    <%= form.checkbox :nome_mae_check %>
+  <div class="bg-primary bg-opacity-10 p-2">
+    <%= form.label :nome_pai_correto, "Nome do Pai Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :nome_pai_correto, placeholder: "Nome do Pai Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Nome da Mãe Correto", style: "display: block" %>
-    <%= form.text_field :nome_mae_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-primary bg-opacity-10 p-2">
+    <%= form.label :nome_mae_check, "Nome da Mãe", class: "form-check-label" %>
+    <%= form.checkbox :nome_mae_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Identidade", style: "display: block" %>
-    <%= form.checkbox :identidade_check %>
+  <div class="bg-primary bg-opacity-10 p-2">
+    <%= form.label :nome_mae_correto, "Nome da Mãe Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :nome_mae_correto, placeholder: "Nome da Mãe Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Identidade Correta", style: "display: block" %>
-    <%= form.text_field :identidade_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-danger bg-opacity-10 p-2">
+    <%= form.label :identidade_check, "Identidade", class: "form-check-label" %>
+    <%= form.checkbox :identidade_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Órgão Expedidor", style: "display: block" %>
-    <%= form.checkbox :orgao_expedidor_check %>
+  <div class="bg-danger bg-opacity-10 p-2">
+    <%= form.label :identidade_correta, "Identidade Correta", class: "form-label visually-hidden" %>
+    <%= form.text_field :identidade_correta, placeholder: "Identidade Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Órgão Expedidor Correto", style: "display: block" %>
-    <%= form.text_field :orgao_expedidor_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-danger bg-opacity-10 p-2">
+    <%= form.label :orgao_expedidor_check, "Órgão Expedidor", class: "form-check-label" %>
+    <%= form.checkbox :orgao_expedidor_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "UF Correta", style: "display: block" %>
-    <%= form.checkbox :uf_check %>
+  <div class="bg-danger bg-opacity-10 p-2">
+    <%= form.label :orgao_expedidor_correto, "Órgão Expedidor Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :orgao_expedidor_correto, placeholder: "Órgão Expedidor Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "UF Correta", style: "display: block" %>
-    <%= form.text_field :uf_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-danger bg-opacity-10 p-2">
+    <%= form.label :uf_check, "UF", class: "form-check-label" %>
+    <%= form.checkbox :uf_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Data de Expedição", style: "display: block" %>
-    <%= form.checkbox :data_expedicao_check %>
+  <div class="bg-danger bg-opacity-10 p-2">
+    <%= form.label :uf_correta, "UF Correta", class: "form-label visually-hidden" %>
+    <%= form.text_field :uf_correta, placeholder: "UF Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Data de Expedição Correta", style: "display: block" %>
-    <%= form.date_field :data_expedicao_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-danger bg-opacity-10 p-2">
+    <%= form.label :data_expedicao_check, "Data de Expedição", class: "form-check-label" %>
+    <%= form.checkbox :data_expedicao_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Tipo de Certidão", style: "display: block" %>
-    <%= form.checkbox :tipo_certidao_check %>
+  <div class="bg-danger bg-opacity-10 p-2">
+    <%= form.label :data_expedicao_correta, "Data de Expedição Correta", class: "form-label visually-hidden" %>
+    <%= form.date_field :data_expedicao_correta, placeholder: "Data de Expedição Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Tipo de Certidão Correto", style: "display: block" %>
-    <%= form.text_field :tipo_certidao_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-warning bg-opacity-10 p-2">
+    <%= form.label :tipo_certidao_check, "Tipo de Certidão", class: "form-check-label" %>
+    <%= form.checkbox :tipo_certidao_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Cartório", style: "display: block" %>
-    <%= form.checkbox :cartorio_check %>
+  <div class="bg-warning bg-opacity-10 p-2">
+    <%= form.label :tipo_certidao_correto, "Tipo de Certidão Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :tipo_certidao_correto, placeholder: "Tipo de Certidão Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Cartório Correto", style: "display: block" %>
-    <%= form.text_field :cartorio_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-warning bg-opacity-10 p-2">
+    <%= form.label :cartorio_check, "Cartório", class: "form-check-label" %>
+    <%= form.checkbox :cartorio_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Número de Termo", style: "display: block" %>
-    <%= form.checkbox :numero_termo_check %>
+  <div class="bg-warning bg-opacity-10 p-2">
+    <%= form.label :cartorio_correto, "Cartório Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :cartorio_correto, placeholder: "Cartório Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Número de Termo Correto", style: "display: block" %>
-    <%= form.number_field :numero_termo_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-warning bg-opacity-10 p-2">
+    <%= form.label :numero_termo_check, "Número de Termo", class: "form-check-label" %>
+    <%= form.checkbox :numero_termo_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Folha", style: "display: block" %>
-    <%= form.checkbox :folha_check %>
+  <div class="bg-warning bg-opacity-10 p-2">
+    <%= form.label :numero_termo_correto, "Número de Termo Correto", class: "form-label visually-hidden" %>
+    <%= form.number_field :numero_termo_correto, placeholder: "Número de Termo Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Folha Correta", style: "display: block" %>
-    <%= form.text_field :folha_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-warning bg-opacity-10 p-2">
+    <%= form.label :folha_check, "Folha", class: "form-check-label" %>
+    <%= form.checkbox :folha_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Livro", style: "display: block" %>
-    <%= form.checkbox :livro_check %>
+  <div class="bg-warning bg-opacity-10 p-2">
+    <%= form.label :folha_correta, "Folha Correta", class: "form-label visually-hidden" %>
+    <%= form.text_field :folha_correta, placeholder: "Folha Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Livro Correto", style: "display: block" %>
-    <%= form.text_field :livro_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-warning bg-opacity-10 p-2">
+    <%= form.label :livro_check, "Livro", class: "form-check-label" %>
+    <%= form.checkbox :livro_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Data de Emissão", style: "display: block" %>
-    <%= form.checkbox :data_emissao_check %>
+  <div class="bg-warning bg-opacity-10 p-2">
+    <%= form.label :livro_correto, "Livro Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :livro_correto, placeholder: "Livro Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Data de Emissão Correta", style: "display: block" %>
-    <%= form.date_field :data_emissao_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-warning bg-opacity-10 p-2">
+    <%= form.label :data_emissao_check, "Data de Emissão", class: "form-check-label" %>
+    <%= form.checkbox :data_emissao_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Matrícula", style: "display: block" %>
-    <%= form.checkbox :matricula_check %>
+  <div class="bg-warning bg-opacity-10 p-2">
+    <%= form.label :data_emissao_correta, "Data de Emissão Correta", class: "form-label visually-hidden" %>
+    <%= form.date_field :data_emissao_correta, placeholder: "Data de Emissão Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Matrícula Correta", style: "display: block" %>
-    <%= form.number_field :matricula_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-warning bg-opacity-10 p-2">
+    <%= form.label :matricula_check, "Matrícula", class: "form-check-label" %>
+    <%= form.checkbox :matricula_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "E-mail Pessoal", style: "display: block" %>
-    <%= form.checkbox :email_pessoal_check %>
+  <div class="bg-warning bg-opacity-10 p-2">
+    <%= form.label :matricula_correta, "Matrícula Correta", class: "form-label visually-hidden" %>
+    <%= form.number_field :matricula_correta, placeholder: "Matrícula Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "E-mail Pessoal Correto", style: "display: block" %>
-    <%= form.text_field :email_pessoal_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :email_pessoal_check, "E-mail Pessoal", class: "form-check-label" %>
+    <%= form.checkbox :email_pessoal_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Cadastro de TCC", style: "display: block" %>
-    <%= form.checkbox :cadastro_tcc_check %>
+  <div class="bg-light p-2">
+    <%= form.label :email_pessoal_correto, "E-mail Pessoal Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :email_pessoal_correto, placeholder: "E-mail Pessoal Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Cadastro de TCC Correto", style: "display: block" %>
-    <%= form.text_field :cadastro_tcc_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :cadastro_tcc_check, "Cadastro de TCC", class: "form-check-label" %>
+    <%= form.checkbox :cadastro_tcc_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Depósito de TCC", style: "display: block" %>
-    <%= form.checkbox :deposito_tcc_check %>
+  <div class="bg-light p-2">
+    <%= form.label :cadastro_tcc_correto, "Cadastro de TCC Correto", class: "form-label visually-hidden" %>
+    <%= form.text_field :cadastro_tcc_correto, placeholder: "Cadastro de TCC Correto", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Ata de Defesa", style: "display: block" %>
-    <%= form.checkbox :ata_defesa_check %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :deposito_tcc_check, "Depósito de TCC", class: "form-check-label" %>
+    <%= form.checkbox :deposito_tcc_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Titularidade de Professores", style: "display: block" %>
-    <%= form.checkbox :titularidade_professores_check %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :ata_defesa_check, "Ata de Defesa", class: "form-check-label" %>
+    <%= form.checkbox :ata_defesa_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Nada Consta", style: "display: block" %>
-    <%= form.checkbox :nada_consta_check %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :titularidade_professores_check, "Titularidade de Professores", class: "form-check-label" %>
+    <%= form.checkbox :titularidade_professores_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Autorização de Funcionamento", style: "display: block" %>
-    <%= form.checkbox :autorizacao_funcionamento_check %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :nada_consta_check, "Nada Consta", class: "form-check-label" %>
+    <%= form.checkbox :nada_consta_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "RG", style: "display: block" %>
-    <%= form.checkbox :doc_rg_check %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :autorizacao_funcionamento_check, "Autorização de Funcionamento", class: "form-check-label" %>
+    <%= form.checkbox :autorizacao_funcionamento_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "CPF", style: "display: block" %>
-    <%= form.checkbox :doc_cpf_check %>
+  <div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 p-2">
+    <%= form.label :doc_rg_check, "RG", class: "form-check-label" %>
+    <%= form.checkbox :doc_rg_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Certidão de Registro Civil", style: "display: block" %>
-    <%= form.checkbox :doc_certidao_check %>
+  <div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 p-2">
+    <%= form.label :doc_cpf_check, "CPF", class: "form-check-label" %>
+    <%= form.checkbox :doc_cpf_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Reservista", style: "display: block" %>
-    <%= form.checkbox :doc_reservista_check %>
+  <div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 p-2">
+    <%= form.label :doc_certidao_check, "Certidão de Registro Civil", class: "form-check-label" %>
+    <%= form.checkbox :doc_certidao_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Título", style: "display: block" %>
-    <%= form.checkbox :doc_titulo_check %>
+  <div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 p-2">
+    <%= form.label :doc_reservista_check, "Reservista", class: "form-check-label" %>
+    <%= form.checkbox :doc_reservista_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Certidão de Quitação Eleitoral", style: "display: block" %>
-    <%= form.checkbox :doc_quitacao_check %>
+  <div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 p-2">
+    <%= form.label :doc_titulo_check, "Título", class: "form-check-label" %>
+    <%= form.checkbox :doc_titulo_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Histórico Definitivo de Conclusão de Curso", style: "display: block" %>
-    <%= form.checkbox :doc_historico_check %>
+  <div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 p-2">
+    <%= form.label :doc_quitacao_check, "Certidão de Quitação Eleitoral", class: "form-check-label" %>
+    <%= form.checkbox :doc_quitacao_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Documento Definitivo de Conclusão de Curso", style: "display: block" %>
-    <%= form.checkbox :doc_certificado_check %>
+  <div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 p-2">
+    <%= form.label :doc_historico_check, "Histórico Definitivo de Conclusão de Curso", class: "form-check-label" %>
+    <%= form.checkbox :doc_historico_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Código de Autenticação no SISTEC (somente para cursos técnicos) (3)", style: "display: block" %>
-    <%= form.checkbox :cod_sistec_check %>
+  <div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 p-2">
+    <%= form.label :doc_certificado_check, "Documento Definitivo de Conclusão de Curso", class: "form-check-label" %>
+    <%= form.checkbox :doc_certificado_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Código SISTEC", style: "display: block" %>
-    <%= form.number_field :cod_sistec_correto %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :cod_sistec_check, "Código de Autenticação no SISTEC (somente para cursos técnicos) (3)", class: "form-check-label" %>
+    <%= form.checkbox :cod_sistec_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Habilitação (somente para Licenciatura em Formação Pedagógica para Graduados não Licenciados) (4)", style: "display: block" %>
-    <%= form.checkbox :habilitacao_curso_check %>
+  <div class="bg-light p-2">
+    <%= form.label :cod_sistec_correto, "Código SISTEC", class: "form-label visually-hidden" %>
+    <%= form.number_field :cod_sistec_correto, placeholder: "Código SISTEC", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Habilitação Correta", style: "display: block" %>
-    <%= form.text_field :habilitacao_curso_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :habilitacao_curso_check, "Habilitação (somente para Licenciatura em Formação Pedagógica para Graduados não Licenciados) (4)", class: "form-check-label" %>
+    <%= form.checkbox :habilitacao_curso_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Data de Conclusão igual ou anterior à data de colação de grau (somente para graduação)", style: "display: block" %>
-    <%= form.checkbox :data_conclusao_check %>
+  <div class="bg-light p-2">
+    <%= form.label :habilitacao_curso_correta, "Habilitação Correta", class: "form-label visually-hidden" %>
+    <%= form.text_field :habilitacao_curso_correta, placeholder: "Habilitação Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Data de Conclusão Correta", style: "display: block" %>
-    <%= form.date_field :data_conclusao_correta %>
+  <div class="d-flex justify-content-between align-items-center bg-light p-2">
+    <%= form.label :data_conclusao_check, "Data de Conclusão igual ou anterior à data de colação de grau (somente para graduação)", class: "form-check-label" %>
+    <%= form.checkbox :data_conclusao_check, class: "form-check-input" %>
   </div>
 
-  <div>
-    <%= form.label "Informação Adicional", style: "display: block" %>
-    <%= form.text_field :info_adicional %>
+  <div class="bg-light p-2">
+    <%= form.label :data_conclusao_correta, "Data de Conclusão Correta", class: "form-label visually-hidden" %>
+    <%= form.date_field :data_conclusao_correta, placeholder: "Data de Conclusão Correta", class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "Status da Análise", style: "display: block" %>
-    <%= form.text_field :status_analise %>
+  <div class="bg-light p-2">
+    <%= form.label :info_adicional, "Informação Adicional", class: "form-label" %>
+    <%= form.textarea :info_adicional, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label "ID do Funcionário", style: "display: block" %>
-    <%= form.text_field :funcionario_id %>
+  <div class="bg-light p-2">
+    <%= form.label :status_analise, "Status da Análise", class: "form-label" %>
+    <%= form.text_field :status_analise, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="bg-light p-2">
+    <%= form.label :funcionario_id, "Funcionário", class: "form-label" %>
+    <%= form.text_field :funcionario_id, class: "form-control", required: true %>
+  </div>
+
+  <div class="bg-light p-2">
+    <%= form.submit @analise.new_record? ? "Cadastrar" : "Atualizar", class: "btn btn-primary mb-3" %>
+    <% if analise.new_record? %>
+      <div class="float-md-end">
+        <%= link_to "Voltar para Análises", analises_path, class: "btn btn-secondary" %>
+      </div>
+    <% else %>
+      <div class="float-md-end">
+        <%= link_to "Voltar para Cadastro", @analise, class: "btn btn-secondary" %>
+        <%= link_to "Voltar para Análises", analises_path, class: "btn btn-secondary ms-2" %>
+      </div>
+    <% end %>
   </div>
 <% end %>

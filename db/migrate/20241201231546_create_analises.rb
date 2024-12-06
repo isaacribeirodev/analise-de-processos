@@ -1,6 +1,7 @@
 class CreateAnalises < ActiveRecord::Migration[8.0]
   def change
     create_table :analises do |t|
+      t.string :processo, null: false
       t.boolean :diploma_nao_emitido_check
       t.boolean :status_matricula_check
       t.boolean :nome_check
@@ -66,5 +67,7 @@ class CreateAnalises < ActiveRecord::Migration[8.0]
 
       t.timestamps
     end
+
+    add_index :analises, :processo
   end
 end

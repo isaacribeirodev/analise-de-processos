@@ -3,8 +3,10 @@
 <%= render @analise %>
 
 <div>
-  <%= link_to "Editar esta Análise", edit_analise_path(@analise) %> |
-  <%= link_to "Voltar para Análises", analises_path %>
-
-  <%= button_to "Excluir esta Análise", @analise, method: :delete %>
+  <%= link_to "Editar", edit_analise_path(@analise), class: "btn btn-primary mb-2" %>
+  <%= link_to "Excluir", analise_path(@analise),
+      data: { turbo_method: :delete, turbo_confirm: "Confirma a exclusão desta análise?" }, class: "btn btn-danger ms-2 mb-2" %>
+  <div class="float-md-end">
+    <%= link_to "Voltar para Análises", analises_path, class: "btn btn-secondary" %>
+  </div>
 </div>
