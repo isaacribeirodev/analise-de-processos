@@ -2,6 +2,10 @@ require "test_helper"
 
 class FuncionariosControllerTest < ActionDispatch::IntegrationTest
   setup do
+    # Desativa o carregamento automático das fixtures.
+    ActiveRecord::FixtureSet.reset_cache
+
+    # Mantém a referência para uso em outros testes.
     @funcionario = funcionarios(:one)
     @analise = analises(:one)
   end
@@ -18,10 +22,11 @@ class FuncionariosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create funcionario" do
     assert_difference("Funcionario.count") do
-      post funcionarios_url, params: { funcionario: { cargo: @funcionario.cargo, cpf: @funcionario.cpf, nome: @funcionario.nome, senha: @funcionario.senha } }
+      post funcionarios_url, params: { funcionario: { cargo: @funcionario.cargo, cpf: "733.754.289-52", nome: "Felipe Manuel Iago Corte Real", senha: "Hebahop5chAPlpLXl_es" } }
     end
 
     assert_redirected_to funcionario_url(Funcionario.last)
+    assert_equal "Funcionário adicionado com sucesso.", flash[:notice]
   end
 
   test "should show funcionario" do
@@ -35,7 +40,7 @@ class FuncionariosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update funcionario" do
-    patch funcionario_url(@funcionario), params: { funcionario: { cargo: @funcionario.cargo, cpf: @funcionario.cpf, nome: @funcionario.nome, senha: @funcionario.senha } }
+    patch funcionario_url(@funcionario), params: { funcionario: { cargo: @funcionario.cargo, cpf: "246.718.808-65", nome: "Severino Arthur Fernando Campos", senha: "duJlbre_URuziber3*op" } }
     assert_redirected_to funcionario_url(@funcionario)
   end
 
@@ -52,6 +57,7 @@ class FuncionariosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy funcionario without analises" do
+    # Remove as análises associadas.
     @funcionario.analises.destroy_all
     assert @funcionario.analises.empty?, "Funcionário não deveria ter análises para este teste."
 

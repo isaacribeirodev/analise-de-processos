@@ -70,6 +70,6 @@ class FuncionariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def funcionario_params
-      params.expect(funcionario: [ :nome, :cpf, :cargo, :senha ])
+      params.expect(funcionario: [ :id, :nome, :cpf, :cargo, :senha ])
     end
 end
