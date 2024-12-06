@@ -58,6 +58,6 @@ ActiveSupport::Inflector.inflections do |inflect|
     inflect.uncountable %w( tórax tênis ônibus lápis fênix )
 
     # Irregulares
-    inflect.irregular "país", "países"  
-    inflect.irregular "analise", "analises" # Faz referência ao plural do verbo analisar. 
+    inflect.irregular 'país', 'países'  
+    inflect.irregular 'analise', 'analises' # Faz referência ao plural do verbo analisar. 
   end
