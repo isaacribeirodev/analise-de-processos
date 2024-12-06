@@ -48,7 +48,7 @@ ActiveSupport::Inflector.inflections do |inflect|
     inflect.singular(/^(.*[^s]s)es$/i, '\1')
     inflect.singular(/ães$/i, "ão")
     inflect.singular(/aes$/i, "ao")
-    inflect.singular(/ãos$/i, "ão")    
+    inflect.singular(/ãos$/i, "ão")
     inflect.singular(/aos$/i, "ao")
     inflect.singular(/ões$/i, "ão")
     inflect.singular(/oes$/i, "ao")
@@ -56,9 +56,9 @@ ActiveSupport::Inflector.inflections do |inflect|
     inflect.singular(/^(g|)ases$/i,  '\1ás')
 
     # Incontáveis
-    inflect.uncountable ["tórax", "tênis", "ônibus", "lápis", "fênix"]
+    inflect.uncountable [ "tórax", "tênis", "ônibus", "lápis", "fênix" ]
 
     # Irregulares
-    inflect.irregular "país", "países"  
+    inflect.irregular "país", "países"
     inflect.irregular "analise", "analises" # Faz referência ao plural do verbo analisar.
   end

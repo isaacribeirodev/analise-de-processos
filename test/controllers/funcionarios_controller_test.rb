@@ -47,7 +47,7 @@ class FuncionariosControllerTest < ActionDispatch::IntegrationTest
   test "should not destroy funcionario with analises" do
     assert @funcionario.analises.any?, "Funcionário precisa ter análises para este teste."
 
-    assert_no_difference('Funcionario.count') do
+    assert_no_difference("Funcionario.count") do
       delete funcionario_url(@funcionario)
     end
 
