@@ -10,7 +10,7 @@ class Funcionario < ApplicationRecord
 
     def verificar_analises
         if analises.any?
-            errors.add(:base, 'Não é possível excluir funcionário com análises associadas.')
+            errors.add(:base, "Funcionário com análises associadas não pode ser excluído.")
             throw :abort
         end
     end

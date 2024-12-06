@@ -14,24 +14,24 @@
 ActiveSupport::Inflector.inflections do |inflect|
     inflect.clear
 
-    inflect.plural(/$/,  's')
+    inflect.plural(/$/,  "s")
     inflect.plural(/(s)$/i,  '\1')
     inflect.plural(/^(paí)s$/i, '\1ses')
     inflect.plural(/(z|r)$/i, '\1es')
-    inflect.plural(/al$/i,  'ais')
-    inflect.plural(/el$/i,  'eis')
-    inflect.plural(/ol$/i,  'ois')
-    inflect.plural(/ul$/i,  'uis')
+    inflect.plural(/al$/i,  "ais")
+    inflect.plural(/el$/i,  "eis")
+    inflect.plural(/ol$/i,  "ois")
+    inflect.plural(/ul$/i,  "uis")
     inflect.plural(/([^aeou])il$/i,  '\1is')
-    inflect.plural(/m$/i,   'ns')
+    inflect.plural(/m$/i,   "ns")
     inflect.plural(/^(japon|escoc|ingl|dinamarqu|fregu|portugu)ês$/i,  '\1eses')
     inflect.plural(/^(|g)ás$/i,  '\1ases')
-    inflect.plural(/ão$/i,  'ões')
+    inflect.plural(/ão$/i,  "ões")
     inflect.plural(/^(irm|m)ão$/i,  '\1ãos')
     inflect.plural(/^(alem|c|p)ão$/i,  '\1ães')
 
     # Sem acentos...
-    inflect.plural(/ao$/i,  'oes')
+    inflect.plural(/ao$/i,  "oes")
     inflect.plural(/^(irm|m)ao$/i,  '\1aos')
     inflect.plural(/^(alem|c|p)ao$/i,  '\1aes')
 
@@ -39,7 +39,7 @@ ActiveSupport::Inflector.inflections do |inflect|
     inflect.singular(/^(á|gá|paí)s$/i, '\1s')
     inflect.singular(/(r|z)es$/i, '\1')
     inflect.singular(/([^p])ais$/i, '\1al')
-    inflect.singular(/eis$/i, 'el')
+    inflect.singular(/eis$/i, "el")
     inflect.singular(/ois$/i, 'ol')
     inflect.singular(/uis$/i, 'ul')
     inflect.singular(/(r|t|f|v)is$/i, '\1il')
